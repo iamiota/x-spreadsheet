@@ -45,8 +45,8 @@ class SelectorElement {
       left, top, width, height,
     } = v;
     const of = {
-      width: width - selectorHeightBorderWidth + 0.8,
-      height: height - selectorHeightBorderWidth + 0.8,
+      width: width - selectorHeightBorderWidth + 0.8 + 3,
+      height: height - selectorHeightBorderWidth + 0.8 + 3,
       left: left - 0.8,
       top: top - 0.8,
     };
@@ -68,8 +68,8 @@ class SelectorElement {
     this.clipboardEl.offset({
       left,
       top,
-      width: width - 5,
-      height: height - 5,
+      width: width - 5 + 5,
+      height: height - 5 + 5,
     });
   }
 
