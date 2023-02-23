@@ -61,7 +61,7 @@ function inputEventHandler(evt) {
   const { suggest, textlineEl, validator } = this;
   const { cell } = this;
   if (cell !== null) {
-    if (('editable' in cell && cell.editable === true) || (cell.editable === undefined)) {
+    if (('editable' in cell && cell.editable === true)) {
       this.inputText = v;
       if (validator) {
         if (validator.type === 'list') {
