@@ -39,6 +39,7 @@ class Element {
           evt.stopPropagation();
         }
       }
+      event.preventDefault();
     });
     return this;
   }
