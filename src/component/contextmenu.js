@@ -4,6 +4,7 @@ import { cssPrefix } from '../config';
 import { tf } from '../locale/locale';
 
 const menuItems = [
+  { key: 'hide', title: tf('contextmenu.hide') },
   { key: 'copy', title: tf('contextmenu.copy'), label: 'Ctrl+C' },
   { key: 'cut', title: tf('contextmenu.cut'), label: 'Ctrl+X' },
   { key: 'paste', title: tf('contextmenu.paste'), label: 'Ctrl+V' },
@@ -16,7 +17,6 @@ const menuItems = [
   // { key: 'delete-row', title: tf('contextmenu.deleteRow') },
   // { key: 'delete-column', title: tf('contextmenu.deleteColumn') },
   // { key: 'delete-cell-text', title: tf('contextmenu.deleteCellText') },
-  { key: 'hide', title: tf('contextmenu.hide') },
   // { key: 'divider' },
   // { key: 'validation', title: tf('contextmenu.validation') },
   // { key: 'divider' },
@@ -61,7 +61,7 @@ export default class ContextMenu {
   // row-col: the whole rows or the whole cols
   // range: select range
   setMode(mode) {
-    const hideEl = this.menuItems[3];
+    const hideEl = this.menuItems[0];
     if (mode === 'row-col') {
       hideEl.show();
     } else {

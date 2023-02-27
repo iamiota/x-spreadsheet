@@ -751,12 +751,12 @@ function sheetInitEvents() {
       switch (keyCode) {
         case 90:
           // undo: ctrl + z
-          this.undo();
+          // this.undo();
           evt.preventDefault();
           break;
         case 89:
           // redo: ctrl + y
-          this.redo();
+          // this.redo();
           evt.preventDefault();
           break;
         case 67:
@@ -767,18 +767,18 @@ function sheetInitEvents() {
           break;
         case 88:
           // ctrl + x
-          cut.call(this);
+          // cut.call(this);
           evt.preventDefault();
           break;
         case 85:
           // ctrl + u
-          toolbar.trigger('underline');
+          // toolbar.trigger('underline');
           evt.preventDefault();
           break;
         case 86:
           // ctrl + v
           // => paste
-          // evt.preventDefault();
+          evt.preventDefault();
           break;
         case 37:
           // ctrl + left
@@ -807,11 +807,11 @@ function sheetInitEvents() {
           break;
         case 66:
           // ctrl + B
-          toolbar.trigger('bold');
+          // toolbar.trigger('bold');
           break;
         case 73:
           // ctrl + I
-          toolbar.trigger('italic');
+          // toolbar.trigger('italic');
           break;
         default:
           break;
@@ -860,7 +860,7 @@ function sheetInitEvents() {
           evt.preventDefault();
           break;
         case 8: // backspace
-          insertDeleteRowColumn.call(this, 'delete-cell-text');
+          // insertDeleteRowColumn.call(this, 'delete-cell-text');
           evt.preventDefault();
           break;
         default:
@@ -868,7 +868,7 @@ function sheetInitEvents() {
       }
 
       if (key === 'Delete') {
-        insertDeleteRowColumn.call(this, 'delete-cell-text');
+        // insertDeleteRowColumn.call(this, 'delete-cell-text');
         evt.preventDefault();
       } else if ((keyCode >= 65 && keyCode <= 90)
         || (keyCode >= 48 && keyCode <= 57)

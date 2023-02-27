@@ -39,7 +39,10 @@ class Element {
           evt.stopPropagation();
         }
       }
-      event.preventDefault();
+      if (['mousewheel', 'DOMMouseScroll'].includes(eventName)) {
+        event.preventDefault();
+      }
+      
     });
     return this;
   }
