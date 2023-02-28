@@ -41,6 +41,11 @@ class Spreadsheet {
     }
   }
 
+  selectSheet(index) {
+    const d = this.datas[index];
+    this.sheet.resetData(d);
+  }
+
   addSheet(name, active = true) {
     const n = name || `sheet${this.sheetIndex}`;
     const d = new DataProxy(n, this.options);
@@ -67,7 +72,7 @@ class Spreadsheet {
     }
   }
 
-  loadData(data) {
+  loadData(data, sheet = 0) {
     const ds = Array.isArray(data) ? data : [data];
     if (this.bottombar !== null) {
       this.bottombar.clear();
@@ -76,9 +81,9 @@ class Spreadsheet {
     if (ds.length > 0) {
       for (let i = 0; i < ds.length; i += 1) {
         const it = ds[i];
-        const nd = this.addSheet(it.name, i === 0);
+        const nd = this.addSheet(it.name, i === sheet);
         nd.setData(it);
-        if (i === 0) {
+        if (i === sheet) {
           this.sheet.resetData(nd);
         }
       }

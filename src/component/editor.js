@@ -57,6 +57,7 @@ function keydownEventHandler(evt) {
 
 function inputEventHandler(evt) {
   const v = evt.target.value;
+
   // console.log(evt, 'v:', v);
   const { suggest, textlineEl, validator } = this;
   const { cell } = this;
@@ -124,6 +125,7 @@ function setText(text, position) {
 }
 
 function suggestItemClick(it) {
+
   const { inputText, validator } = this;
   let position = 0;
   if (validator && validator.type === 'list') {
@@ -204,7 +206,7 @@ export default class Editor {
     // const { cell } = this;
     // const cellText = (cell && cell.text) || '';
     if (this.inputText !== '') {
-      this.change('finished', this.inputText);
+      // this.change('finished', this.inputText);
     }
     this.cell = null;
     this.areaOffset = null;

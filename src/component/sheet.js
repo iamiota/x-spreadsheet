@@ -518,6 +518,8 @@ function dataSetCellText(text, state = 'finished') {
   const { ri, ci } = data.selector;
   if (state === 'finished') {
     table.render();
+  } else if (state === 'cell-edited-finished') {
+    this.trigger('cell-edited-finished', text, ri, ci);
   } else {
     this.trigger('cell-edited', text, ri, ci);
   }
@@ -615,6 +617,9 @@ function sheetInitEvents() {
       overlayerMousemove.call(this, evt);
     })
     .on('mousedown', (evt) => {
+      if (![undefined, ''].includes(editor.inputText)) {
+        editor.change('cell-edited-finished', editor.inputText);
+      }
       editor.clear();
       contextMenu.hide();
       // the left mouse button: mousedown → mouseup → click
@@ -723,17 +728,17 @@ function sheetInitEvents() {
     this.focusing = overlayerEl.contains(evt.target);
   });
 
-  bind(window, 'paste', (evt) => {
-    if (!this.focusing) return;
-    paste.call(this, 'all', evt);
-    evt.preventDefault();
-  });
+  // bind(window, 'paste', (evt) => {
+  //   if (!this.focusing) return;
+  //   paste.call(this, 'all', evt);
+  //   evt.preventDefault();
+  // });
 
-  bind(window, 'copy', (evt) => {
-    if (!this.focusing) return;
-    copy.call(this, evt);
-    evt.preventDefault();
-  });
+  // bind(window, 'copy', (evt) => {
+  //   if (!this.focusing) return;
+  //   copy.call(this, evt);
+  //   evt.preventDefault();
+  // });
 
   // for selector
   bind(window, 'keydown', (evt) => {
