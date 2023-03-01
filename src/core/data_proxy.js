@@ -538,7 +538,7 @@ export default class DataProxy {
     if (nci > cci) [sci, eci] = [cci, nci];
     else [sci, eci] = [nci, cci];
     selector.range = merges.union(new CellRange(
-      sri, sci, eri, eci,
+      ri < 0 ? 0 : sri, ci < 0 ? 0 : sci, eri, eci,
     ));
     selector.range = merges.union(selector.range);
     // console.log('selector.range:', selector.range);
