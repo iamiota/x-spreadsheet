@@ -256,16 +256,7 @@ body {
   border: 1px dashed rgba(0, 0, 0, 0.45);
 }
 .x-spreadsheet-selector .x-spreadsheet-selector-corner {
-  pointer-events: auto;
-  position: absolute;
-  cursor: crosshair;
-  font-size: 0;
-  height: 5px;
-  width: 5px;
-  right: -5px;
-  bottom: -5px;
-  border: 2px solid #ffffff;
-  background: #4b89ff;
+  display: none;
 }
 .x-spreadsheet-editor {
   z-index: 20;
