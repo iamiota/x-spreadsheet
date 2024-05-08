@@ -1,6 +1,6 @@
 {
-  "name": "x-data-spreadsheet",
-  "version": "1.1.8",
+  "name": "kiwi-x-data-spreadsheet",
+  "version": "0.0.1",
   "description": "a javascript xpreadsheet",
   "types": "src/index.d.ts",
   "main": "src/index.js",
@@ -9,11 +9,11 @@
     "dist",
     "src"
   ],
-  "author": "myliang <liangyuliang0335@gmail.com>",
+  "author": "Chris Yi",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/myliang/x-spreadsheet.git"
+    "url": "https://github.com/iamiota/x-spreadsheet.git"
   },
   "nyc": {
     "all": true,
@@ -67,9 +67,5 @@
   "dependencies": {
     "opencollective": "^1.0.3",
     "opencollective-postinstall": "^2.0.2"
-  },
-  "collective": {
-    "type": "opencollective",
-    "url": "https://opencollective.com/x-spreadsheet"
   }
 }
